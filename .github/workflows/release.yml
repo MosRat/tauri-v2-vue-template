@@ -72,7 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
         with:
-          tagName: app-v__VERSION__-${{ steps.generate_tag.outputs.TAG }} # the action automatically replaces \_\_VERSION\_\_ with the app version.
+          tagName: app-v__VERSION__-${{ steps.generate_tag_windows.outputs.TAG }}${{ steps.generate_tag_unix.outputs.TAG }} # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: 'App v__VERSION__'
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: false
